@@ -3,17 +3,19 @@ package shahzoddev.mobile.pokemonbox.presenter
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.Filter
+import android.widget.Filterable
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import shahzoddev.mobile.pokemonbox.api.PokemonRepository
 import shahzoddev.mobile.pokemonbox.databinding.PokemonListItemBinding
 import shahzoddev.mobile.pokemonbox.domain.Pokemon
 import java.util.Locale
 
 class PokemonAdapter(
-    private val items: List<Pokemon?>
+    private var items: List<Pokemon?>
 ) : RecyclerView.Adapter<PokemonAdapter.ViewHolder>() {
+
 
     class ViewHolder(private val binding: PokemonListItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
@@ -29,8 +31,6 @@ class PokemonAdapter(
             pokemon?.let {
 
                 Glide.with(root).load(pokemon.sprites.frontDefault).into(pokeIv)
-                Log.d("PokemonImage", "Sprite URL: ${pokemon.sprites.frontDefault}")
-
 
                 pokeName.text = pokemon.formattedName
 
@@ -50,18 +50,16 @@ class PokemonAdapter(
                 } else {
                     pokeType2.isVisible = false
                 }
-                pokeAbout.text = "A,mxnckljdl,dxc.skd,jxxxxxxx.sjjjjjjjjjjjfkm,j"
+                pokeAbout.text = "It uses the nutrients that are packed on its back in order to grow."
 
             }
-
-
         }
-
-
     }
 
-
-
+    fun setFilteredList(items: List<Pokemon?>){
+        this.items = items
+        notifyDataSetChanged()
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = ViewHolder(
         PokemonListItemBinding.inflate(
@@ -74,8 +72,9 @@ class PokemonAdapter(
     override fun getItemCount() = items.size
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-
         holder.bind(items[position])
+
     }
+
 
 }

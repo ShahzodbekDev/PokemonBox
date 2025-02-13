@@ -24,15 +24,13 @@ class PokemonRepository() {
         return call.execute().body()
 
     }
+
     fun getPokemon(number: Int): PokemonApiResult? {
         val call = service.getPokemon(number)
 
         return call.execute().body()
 
     }
-
-
-
 
 
 }

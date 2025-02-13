@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">PokemonBox</string>
+    <string name="waitingText">Maʼlumotlar olinmoqda\n iltimos biroz kuting...</string>
+    <string name="not_found">Not Found</string>
+    <string name="search_name_or_type">Search name or type</string>
 </resources>

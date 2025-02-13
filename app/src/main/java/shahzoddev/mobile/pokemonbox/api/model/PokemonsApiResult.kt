@@ -21,6 +21,7 @@ data class PokemonApiResult(
     val sprites: PokemonSprites,
     val types: List<PokemonTypeSlot>
 )
+
 data class PokemonSprites(
     @SerializedName("front_default") val frontDefault: String?
 )
