@@ -33,7 +33,7 @@ class PokemonViewModel : ViewModel() {
                     Pokemon(
                         spokemonApiResults.id,
                         spokemonApiResults.name,
-                        pokemonResult.url,
+                        spokemonApiResults.sprites,
                         spokemonApiResults.types.map { types -> types.type }
 
                     )

@@ -14,7 +14,5 @@ interface PokemonService {
     @GET("pokemon/{number}")
     fun getPokemon(@Path("number") number: Int): Call<PokemonApiResult>
 
-    @GET("pokemon-form/{number}")
-    fun getPokemonForm(@Path("number") number: Int): Call<PokemonFromResult>
 
 }

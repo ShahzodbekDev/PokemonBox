@@ -28,7 +28,10 @@ class PokemonAdapter(
 
             pokemon?.let {
 
-//                Glide.with(root).load(pokemon.imageUrl).into(pokeIv)
+                Glide.with(root).load(pokemon.sprites.frontDefault).into(pokeIv)
+                Log.d("PokemonImage", "Sprite URL: ${pokemon.sprites.frontDefault}")
+
+
                 pokeName.text = pokemon.formattedName
 
                 pokeType1.text = pokemon.types[0].name.replaceFirstChar {
@@ -54,7 +57,11 @@ class PokemonAdapter(
 
         }
 
+
     }
+
+
+
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = ViewHolder(
         PokemonListItemBinding.inflate(

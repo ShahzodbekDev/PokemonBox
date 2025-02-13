@@ -3,10 +3,8 @@ package shahzoddev.mobile.pokemonbox.presenter
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
-import shahzoddev.mobile.pokemonbox.api.PokemonRepository
 import shahzoddev.mobile.pokemonbox.databinding.ActivityMainBinding
 import shahzoddev.mobile.pokemonbox.domain.Pokemon
 import shahzoddev.mobile.pokemonbox.viewModel.PokemonViewModel

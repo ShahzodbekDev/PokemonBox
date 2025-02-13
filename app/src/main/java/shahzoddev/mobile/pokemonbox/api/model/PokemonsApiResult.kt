@@ -1,5 +1,6 @@
 package shahzoddev.mobile.pokemonbox.api.model
 
+import com.google.gson.annotations.SerializedName
 import shahzoddev.mobile.pokemonbox.domain.PokemonType
 
 data class PokemonsApiResult(
@@ -17,7 +18,11 @@ data class PokemonResult(
 data class PokemonApiResult(
     val id: Int,
     val name: String,
+    val sprites: PokemonSprites,
     val types: List<PokemonTypeSlot>
+)
+data class PokemonSprites(
+    @SerializedName("front_default") val frontDefault: String?
 )
 
 data class PokemonTypeSlot(
@@ -25,15 +30,5 @@ data class PokemonTypeSlot(
     val type: PokemonType
 )
 
-
-data class PokemonFromResult(
-    val id: Int,
-    val sprites: List<Sprites>,
-)
-data class Sprites(
-    val frontDefault: String
-)
-
-class VersionGroup {}
 
 
