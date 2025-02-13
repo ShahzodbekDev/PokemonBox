@@ -1,10 +1,12 @@
 package shahzoddev.mobile.pokemonbox.presenter
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import shahzoddev.mobile.pokemonbox.api.PokemonRepository
 import shahzoddev.mobile.pokemonbox.databinding.PokemonListItemBinding
 import shahzoddev.mobile.pokemonbox.domain.Pokemon
 import java.util.Locale
@@ -26,7 +28,7 @@ class PokemonAdapter(
 
             pokemon?.let {
 
-                Glide.with(root).load(pokemon.imageUrl).into(pokeIv)
+//                Glide.with(root).load(pokemon.imageUrl).into(pokeIv)
                 pokeName.text = pokemon.formattedName
 
                 pokeType1.text = pokemon.types[0].name.replaceFirstChar {
@@ -45,7 +47,7 @@ class PokemonAdapter(
                 } else {
                     pokeType2.isVisible = false
                 }
-                pokeAbout.text = pokemon.about
+                pokeAbout.text = "A,mxnckljdl,dxc.skd,jxxxxxxx.sjjjjjjjjjjjfkm,j"
 
             }
 

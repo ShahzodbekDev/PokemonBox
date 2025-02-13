@@ -18,10 +18,22 @@ data class PokemonApiResult(
     val id: Int,
     val name: String,
     val types: List<PokemonTypeSlot>
-
 )
 
 data class PokemonTypeSlot(
     val slot: Int,
     val type: PokemonType
 )
+
+
+data class PokemonFromResult(
+    val id: Int,
+    val sprites: List<Sprites>,
+)
+data class Sprites(
+    val frontDefault: String
+)
+
+class VersionGroup {}
+
+

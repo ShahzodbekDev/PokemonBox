@@ -7,9 +7,9 @@ import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import shahzoddev.mobile.pokemonbox.api.model.PokemonApiResult
+import shahzoddev.mobile.pokemonbox.api.model.PokemonFromResult
 import shahzoddev.mobile.pokemonbox.api.model.PokemonService
 import shahzoddev.mobile.pokemonbox.api.model.PokemonsApiResult
-import kotlin.math.log
 
 class PokemonRepository() {
     private val service: PokemonService
@@ -36,4 +36,14 @@ class PokemonRepository() {
 
     }
 
+    fun getPokemonForm(number: Int): PokemonFromResult? {
+        val call = service.getPokemonForm(number)
+
+        return call.execute().body()
+
+    }
+
+
+
 }
+
