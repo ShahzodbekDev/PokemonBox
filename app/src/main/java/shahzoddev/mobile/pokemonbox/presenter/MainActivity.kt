@@ -3,9 +3,6 @@ package shahzoddev.mobile.pokemonbox.presenter
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
-import android.text.method.DigitsKeyListener
-import android.text.method.TextKeyListener
-import android.view.View
 import android.widget.TextView
 import androidx.activity.ComponentActivity
 import androidx.core.view.isVisible
@@ -70,10 +67,7 @@ class MainActivity : ComponentActivity() {
     }
 
     private fun loadRecyclerView(pokemons: List<Pokemon?>) {
-
         recyclerView.adapter = PokemonAdapter(pokemons)
-
-
     }
 
     private fun filterPokemonList(query: String) {

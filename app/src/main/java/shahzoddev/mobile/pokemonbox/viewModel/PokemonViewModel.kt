@@ -2,6 +2,9 @@ package shahzoddev.mobile.pokemonbox.viewModel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import shahzoddev.mobile.pokemonbox.api.PokemonRepository
 import shahzoddev.mobile.pokemonbox.domain.Pokemon
 
@@ -9,10 +12,9 @@ class PokemonViewModel : ViewModel() {
     var pokemons = MutableLiveData<List<Pokemon?>>()
 
     init {
-        Thread(Runnable {
+        viewModelScope.launch(Dispatchers.IO) {
             loadPokemon()
-        }).start()
-
+        }
     }
 
     private fun loadPokemon() {

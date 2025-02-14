@@ -1,10 +1,7 @@
 package shahzoddev.mobile.pokemonbox.presenter
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.Filter
-import android.widget.Filterable
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
@@ -50,13 +47,14 @@ class PokemonAdapter(
                 } else {
                     pokeType2.isVisible = false
                 }
-                pokeAbout.text = "It uses the nutrients that are packed on its back in order to grow."
+                pokeAbout.text =
+                    "It uses the nutrients that are packed on its back in order to grow."
 
             }
         }
     }
 
-    fun setFilteredList(items: List<Pokemon?>){
+    fun setFilteredList(items: List<Pokemon?>) {
         this.items = items
         notifyDataSetChanged()
     }

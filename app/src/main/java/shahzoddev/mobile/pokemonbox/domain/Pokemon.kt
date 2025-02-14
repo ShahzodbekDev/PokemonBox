@@ -4,7 +4,7 @@ import shahzoddev.mobile.pokemonbox.api.model.PokemonSprites
 import java.util.Locale
 
 data class Pokemon(
-    val number: Int,
+    val id: Int,
     val name: String,
     val sprites: PokemonSprites,
     val types: List<PokemonType>,
