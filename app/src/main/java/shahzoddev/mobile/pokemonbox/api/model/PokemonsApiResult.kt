@@ -23,6 +23,14 @@ data class PokemonApiResult(
 )
 
 data class PokemonSprites(
+    val other: OtherSprites
+)
+
+data class OtherSprites(
+    @SerializedName("dream_world") val dreamWorld: DreamWorld
+)
+
+data class DreamWorld(
     @SerializedName("front_default") val frontDefault: String?
 )
 

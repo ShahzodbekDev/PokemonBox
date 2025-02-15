@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    id ("org.jetbrains.kotlin.kapt")
 }
 
 android {
@@ -13,7 +14,7 @@ android {
         minSdk = 23
         targetSdk = 35
         versionCode = 1
-        versionName = "1.0"
+        versionName = "1.0.1"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -64,6 +65,10 @@ dependencies {
 
     //Glide
     implementation ("com.github.bumptech.glide:glide:4.16.0")
+    kapt ("com.github.bumptech.glide:compiler:4.16.0")
+
+    // SVG qo‘llab-quvvatlash uchun
+    implementation ("com.caverock:androidsvg:1.4")
 
     //Retrofit && Gson
     implementation ("com.squareup.retrofit2:retrofit:2.11.0")

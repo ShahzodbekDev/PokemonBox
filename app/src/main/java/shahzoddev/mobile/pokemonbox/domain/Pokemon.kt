@@ -11,5 +11,6 @@ data class Pokemon(
 ) {
     val formattedName =
         name.replaceFirstChar { if (it.isLowerCase()) it.titlecase(Locale.ROOT) else it.toString() }
+
 }
 
